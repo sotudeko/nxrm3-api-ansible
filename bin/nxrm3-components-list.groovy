@@ -53,12 +53,7 @@ class NXRM3Components {
          }
       }
 
-      // println 'Number of components: ' + numberOfComponents
-   }
-
-   static def printRaw(it){
-      def pretty = JsonOutput.toJson(it)
-      println pretty
+      println  repositoryName + ' (' + repositoryUrl + ') - number of components: ' + numberOfComponents
    }
 
    static printList(it){
@@ -73,10 +68,16 @@ class NXRM3Components {
       }
 
       println listing
-      println ' - Assets'
-      for (asset in it.assets){
-         println '  -- ' + asset.downloadUrl // + ' (' + asset.id + ')'
-      }
+
+      // println ' - Assets'
+      // for (asset in it.assets){
+      //    println '  -- ' + asset.downloadUrl // + ' (' + asset.id + ')'
+      // }
+   }
+
+   static def printRaw(it){
+      def pretty = JsonOutput.toJson(it)
+      println pretty
    }
 
    static def printMaven(it){
