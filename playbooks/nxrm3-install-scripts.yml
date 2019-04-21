@@ -1,3 +1,0 @@
-- hosts: nxrm3_controller
-  roles:
-    - nxrm3-install-scripts
