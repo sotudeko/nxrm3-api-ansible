@@ -1,6 +1,6 @@
 - hosts: nxrm3_controller
   tasks:
-    - name: Upload component to Nexus Repository
+    - name: Upload component to Nexus Repository "{{ repository }}"
       shell: curl -v -u "{{ item.user }}":"{{ item.passwd }}" \
              -X POST "{{ item.host }}:{{ item.port }}/service/rest/v1/components?repository={{ repository }}" \
              -F maven2.groupId="{{ group }}" \
