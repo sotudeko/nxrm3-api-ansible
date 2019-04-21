@@ -1,0 +1,7 @@
+---
+# tasks file for nxrm3-scripts-api-run
+
+- include: create_role.yml
+  with_items: "{{ nxrm3_role }}"
+  when: script_name == 'create_role'
+

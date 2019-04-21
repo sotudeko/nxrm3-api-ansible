@@ -1,0 +1,12 @@
+# tasks file for nxrm3-script-api-install-scripts
+---
+- include: install_script.yml
+  with_items:
+    - create_capability
+    - create_role
+    - create_privilege_repository
+    - create_content_selector
+    - list_roles
+    - list_privileges
+    - list_content_selectors
+
