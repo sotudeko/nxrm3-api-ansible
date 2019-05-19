@@ -1,9 +1,13 @@
 #!/bin/bash
 
-repoUrl=$1
-username=$2
-passwd=$3
-scriptName=$4
+scriptName=$1
+repoUrl=$2
+username=$3
+passwd=$4
+
+if [ -z ${repoUrl} ]; then repoUrl="http://localhost:8081"; fi
+if [ -z ${username} ]; then username="admin"; fi
+if [ -z ${passwd} ]; then passwd="admin123"; fi
 
 endPoint='service/rest/v1/script'
 

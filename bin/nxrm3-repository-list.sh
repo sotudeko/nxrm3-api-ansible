@@ -8,9 +8,9 @@ if [ -z ${repoUrl} ]; then repoUrl="http://localhost:8081"; fi
 if [ -z ${username} ]; then username="admin"; fi
 if [ -z ${passwd} ]; then passwd="admin123"; fi
 
-endPoint='service/rest/v1/script'
+endPoint='service/rest/v1/repositories'
 
-echo "Listing Nexus Repository Manager 3 API Scripts\n"
+echo "Listing Nexus Repository Manager Repositories\n"
 echo "- ${repoUrl}"
 echo
 
@@ -18,7 +18,6 @@ curl -s -u ${username}:${passwd} -X GET ${repoUrl}/${endPoint} | grep '"name"' |
 echo
 
 exit 0
-
 
 
 
