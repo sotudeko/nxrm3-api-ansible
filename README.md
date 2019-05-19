@@ -2,7 +2,7 @@
 
 Nexus Repository 3 API automation with Ansible
 
-The playbooks in this repository demonstrate using Ansible to automate calls to the [NXRM3 Script API](https://help.sonatype.com/repomanager3/rest-and-integration-api/script-api)
+The playbooks in this repository demonstrate using Ansible to automate calls to the [NXRM3 Script API](https://help.sonatype.com/repomanager3/rest-and-integration-api/script-api) to create NXRM3 objects in one or multiple NXRM3 instances. 
 
 References:
 https://github.com/savoirfairelinux/ansible-nexus3-oss. 
