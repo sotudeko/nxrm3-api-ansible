@@ -2,7 +2,7 @@
 
 playbook=nxrm3-privilege-repository-create
 
-ansible-playbook -v ../playbooks/${playbook}.yml --extra-vars @data/privilege-repository.json
+ansible-playbook ../playbooks/${playbook}.yml --extra-vars @data/privilege-repository.json
 
 
 

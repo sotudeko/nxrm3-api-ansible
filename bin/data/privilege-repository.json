@@ -1,5 +1,5 @@
 {
- "script_name":"create_privilege_repository",
+ "script_name":"privilege_repository_create",
  "nxrm3_privilege_name":"my-priv-3",
  "nxrm3_repository":"maven-releases",
  "nxrm3_privilege_description":"my-priv-3",

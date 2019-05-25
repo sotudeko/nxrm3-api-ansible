@@ -1,5 +1,5 @@
 {
- "script_name":"create_content_selector", 
+ "script_name":"content_selector_create", 
  "nxrm3_cs_name":"my-cs-name"
 }
 
