@@ -12,9 +12,12 @@ scriptResults.put('action_details', actionDetails)
 
 parsed_args = new JsonSlurper().parseText(args)
 
+log.info('content_selector_create: start')
+log.info(JsonOutput.toJson(parsed_args))
+
 authManager = security.getSecuritySystem().getAuthorizationManager(UserManager.DEFAULT_SOURCE)
 
-Map<String, String> currentResult = [id: parsed_args.id, name: parsed_args.name, status: 'no change']   
+Map<String, String> currentResult = [id: parsed_args.name, name: parsed_args.name, status: 'no change']   
 
 try {
     def selectorConfig = new SelectorConfiguration(

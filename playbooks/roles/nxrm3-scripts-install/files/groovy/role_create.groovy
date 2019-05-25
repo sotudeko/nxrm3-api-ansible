@@ -22,7 +22,7 @@ try {
 privileges = (parsed_args.privileges == null ? new HashSet() : parsed_args.privileges.toSet())
 roles = (parsed_args.roles == null ? new HashSet() : parsed_args.roles.toSet())
 
-log.info('role_create2: start')
+log.info('role_create: start')
 log.info(JsonOutput.toJson(parsed_args))
 
 Map<String, String> currentResult = [id: parsed_args.roleId, name: parsed_args.name, status: 'no change']   

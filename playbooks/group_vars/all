@@ -22,16 +22,6 @@ nxrm3_role:
     privileges: "{{ nxrm3_role_privileges }}"
     roles: "{{ nxrm3_role_roles }}"
 
-nxrm3_role2:
-  - id: "{{ roleId }}"  
-    roles: "{{ roles }}"
-    version: "1"
-    privileges: "{{ privileges }}"
-    description: "{{ description }}"
-    readOnly: false
-    source: "default"
-    name: "{{ nxrm3_role_name }}"
-
 nxrm3_privilege_repository:
   - name: "{{ nxrm3_privilege_name }}"  
     description: "{{ nxrm3_privilege_description }}"
@@ -48,7 +38,5 @@ nxrm3_content_selector:
   - name: "{{ nxrm3_cs_name }}"
     description: "{{ nxrm3_cs_name }}"
     type: 'CSEL'
-    attributes: 
-      - coordinate.groupId =^ "com.mycompany"
+    attributes: "{{ nxrm3_cs_attributes }}"
   
- 
