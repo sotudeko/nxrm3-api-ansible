@@ -14,7 +14,7 @@ authManager = security.getSecuritySystem().getAuthorizationManager(UserManager.D
 def existingRole = null
 
 try {
-    existingRole = authManager.getRole(parsed_args.id)
+    existingRole = authManager.getRole(parsed_args.roleId)
 } catch (NoSuchRoleException ignored) {
     // could not find role
 }
@@ -22,7 +22,10 @@ try {
 privileges = (parsed_args.privileges == null ? new HashSet() : parsed_args.privileges.toSet())
 roles = (parsed_args.roles == null ? new HashSet() : parsed_args.roles.toSet())
 
-Map<String, String> currentResult = [id: parsed_args.id, name: parsed_args.name, status: 'no change']   
+log.info('role_create2: start')
+log.info(JsonOutput.toJson(parsed_args))
+
+Map<String, String> currentResult = [id: parsed_args.roleId, name: parsed_args.name, status: 'no change']   
 
 try {
     if (existingRole != null) {
@@ -33,20 +36,21 @@ try {
         existingRole.setRoles(roles)
         authManager.updateRole(existingRole)
         currentResult.status = 'updated'
+        log.info("Role {} updated", parsed_args.name)
     } 
     else {
         log.info('creating role')
-        log.info('id', parsed_args.id) 
+        log.info('id', parsed_args.roleId) 
         log.info('name', parsed_args.name) 
         log.info('desc', parsed_args.description) 
         log.info('privs', privileges.toList()) 
         log.info('roles', roles.toList())
 
-        security.addRole(parsed_args.id, parsed_args.name, parsed_args.description, privileges.toList(), roles.toList())
+        security.addRole(parsed_args.roleId, parsed_args.name, parsed_args.description, privileges.toList(), roles.toList())
         currentResult.status = 'created'
+        log.info("Role {} created", parsed_args.name)
     }
 
-    log.info("Role {} updated", parsed_args.name)
     scriptResults.changed = true
 }
 catch (Exception e){

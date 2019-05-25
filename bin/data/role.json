@@ -1,8 +1,8 @@
 {
  "script_name":"role_create", 
- "nxrm3_role_id":"my-role-3-id", 
- "nxrm3_role_name":"my-role-3-name", 
- "nxrm3_role_description":"my-role-3-name", 
+ "nxrm3_role_id":"my-role-456-id", 
+ "nxrm3_role_name":"my-role-456-name", 
+ "nxrm3_role_description":"my-role-456-name", 
  "nxrm3_role_privileges":["nx-component-upload", "nx-repository-admin-*-*-*", "nx-blobstores-all"], 
  "nxrm3_role_roles":["nx-admin","nx-anonymous"]
 }

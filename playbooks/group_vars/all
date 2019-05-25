@@ -16,11 +16,21 @@ docker_registries:
   - sola.local:18086
 
 nxrm3_role:
-  - id: "{{ nxrm3_role_id }}"  
+  - roleId: "{{ nxrm3_role_id }}"  
     name: "{{ nxrm3_role_name }}"
     description: "{{ nxrm3_role_description }}"
     privileges: "{{ nxrm3_role_privileges }}"
     roles: "{{ nxrm3_role_roles }}"
+
+nxrm3_role2:
+  - id: "{{ roleId }}"  
+    roles: "{{ roles }}"
+    version: "1"
+    privileges: "{{ privileges }}"
+    description: "{{ description }}"
+    readOnly: false
+    source: "default"
+    name: "{{ nxrm3_role_name }}"
 
 nxrm3_privilege_repository:
   - name: "{{ nxrm3_privilege_name }}"  
